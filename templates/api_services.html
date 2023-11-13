@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicios API REST</title>
+    <link rel="stylesheet" src="style.css">
+</head>
+<body>
+    <h1>Servicios API REST</h1>
+    <p>Aquí puedes ver los servicios GET que has creado en la API y sus descripciones:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>URL</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+            <tr>
+                <td>{{ service.name }}</td>
+                <td>{{ service.url }}</td>
+                <td>{{ service.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

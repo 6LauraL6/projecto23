@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datos de Bioinformática</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <header>
+        <h1>Datos de Bioinformática</h1>
+        <nav class="top-menu">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/data">Datos</a></li>
+                <li><a href="/data/country_rank">Ránking por País</a></li>
+                <li><a href="/data/distribution">Ver </a></li>
+                <li><a href="/api/services_page">Ver Servicios API REST</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Exploración de Datos</h2>
+            <p>Aquí puedes ver los datos y los gráficos relacionados con el conjunto de datos de pacientes de enfermedades del corazón.</p>
+        </section>
+        {% if country_rank %}
+        <section>
+            <h3>Ránking de Países con Más Pacientes</h3>
+            <img src="{{ url_for('static', filename='country_rank.png') }}" alt="Gráfico de Ránking por País">
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Portal de Bioinformática</p>
+    </footer>
+</body>
+</html>
